@@ -16,7 +16,7 @@
       Mugs
     </option>
   </select>
-  `,i=ue.embellishments.filter(t=>-1!==t.info.compatibleProducts.indexOf(e.data.productType)).map((t,n)=>`\n    <option value="${n}" ${e.data.embellishmentIndex==n?"selected":""}>\n      ${t.info.name}\n    </option>\n    `),r=ne(i),o=ne`
+  `,i=ue.embellishments.map((t,n)=>`\n    <option value="${n}" ${e.data.embellishmentIndex==n?"selected":""} ${-1===t.info.compatibleProducts.indexOf(e.data.productType)?"disabled":""}>\n      ${t.info.name}\n    </option>\n    `),r=ne(i),o=ne`
   <select name="embellishment" oninput=${function(n){"nothing"===n.target.value&&(e.data.productCount="nothing"),e.data.locations={},e.data.embellishmentIndex="nothing"===n.target.value?"nothing":parseInt(n.target.value,10),e.data.embellishment=ue.embellishments[e.data.embellishmentIndex],t("render")}} size="4">
     <option value="nothing" ${"nothing"==e.data.embellishmentIndex?"selected":""}>
       Please select an embellishment technique
