@@ -109,7 +109,7 @@
       <option value="nothing">
         Please select ${t} printing
       </option>
-      ${function(t){const n=e.data.embellishment.info.options.map(n=>`\n        <option value=${n} ${e.data.locations[t]==n?"selected":""}>\n          ${n}\n        </option>\n        `);return ne(n)}(t)}
+      ${function(t){const n=e.data.embellishment.info.options.map(n=>`\n      <option value='${n}' ${e.data.locations[t]==n?"selected":""}>\n        ${n}\n      </option>\n      `);return ne(n)}(t)}
     </select>
     `}(t)}
       </div>
